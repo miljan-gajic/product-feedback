@@ -8,6 +8,7 @@
   --primary-pink: #ad1fea;
   --secondary-blue: #4661e6;
   --accent-orange: #f49f85;
+  --accent-grey: #cfd7ff;
 
   --border-clr: #979797;
 }
@@ -19,6 +20,7 @@
   --color-main-bg: var(--main-bg);
   --color-main-border: var(--border-clr);
   --color-secondary-bg: var(--secondary-bg);
+  --color-hover: var(--accent-grey);
 }
 
 @media (prefers-color-scheme: dark) {

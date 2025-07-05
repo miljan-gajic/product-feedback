@@ -9,7 +9,7 @@ export function Tag({ tagContent, active }: TagProps) {
   return (
     <button
       className={cn(
-        'h-[30px] w-fit px-5 py-1 rounded-xl',
+        'h-[30px] w-fit px-5 py-2 rounded-xl cursor-pointer hover:bg-hover',
         active ? 'bg-secondary' : 'bg-secondary-bg'
       )}
     >
