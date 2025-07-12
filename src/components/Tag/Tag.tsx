@@ -15,7 +15,7 @@ export function Tag({ tagContent, active }: TagProps) {
     >
       <p
         className={cn(
-          ' text-center font-bold text-xs',
+          'text-center font-bold text-xs',
           active ? 'text-white' : 'text-secondary'
         )}
       >
