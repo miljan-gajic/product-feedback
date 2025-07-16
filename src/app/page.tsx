@@ -1,5 +1,6 @@
 import { Aside } from '@/components/Aside/Aside';
 import { Card } from '@/components/Card/Card';
+import { List } from '@/components/List/List';
 import { Logo } from '@/components/Logo/Logo';
 import { Tag } from '@/components/Tag/Tag';
 
@@ -17,10 +18,7 @@ export default function Home() {
           <Tag tagContent="Feature" />
         </Card>
         <Card>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis,
-            sunt. Aspernatur eum aliquam quos.
-          </p>
+          <List listItems={[]} title="" />
         </Card>
       </Aside>
     </>

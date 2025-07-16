@@ -4,11 +4,13 @@
   --main-bg: #f7f8fd;
   --secondary-bg: #f2f4ff;
   --main-text-clr: #647196;
+  --secondary-text-clr: #3a4374;
 
   --primary-pink: #ad1fea;
   --secondary-blue: #4661e6;
   --accent-orange: #f49f85;
   --accent-grey: #cfd7ff;
+  --accent-light-blue: #62bcfa;
 
   --border-clr: #979797;
 }
@@ -21,6 +23,8 @@
   --color-main-border: var(--border-clr);
   --color-secondary-bg: var(--secondary-bg);
   --color-hover: var(--accent-grey);
+  --color-secondary-text: var(--secondary-text-clr);
+  --color-accent-blue: var(--accent-light-blue);
 }
 
 @media (prefers-color-scheme: dark) {
