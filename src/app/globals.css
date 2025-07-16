@@ -5,6 +5,7 @@
   --secondary-bg: #f2f4ff;
   --main-text-clr: #647196;
   --secondary-text-clr: #3a4374;
+  --faded-text: #f2f4fe;
 
   --primary-pink: #ad1fea;
   --secondary-blue: #4661e6;
@@ -13,6 +14,12 @@
   --accent-light-blue: #62bcfa;
 
   --border-clr: #979797;
+
+  --rad-clr-1: #e84d70;
+  --rad-clr-2: #a337f6;
+  --rad-clr-3: #28a7ed;
+
+  --comment-stat: #373f68;
 }
 
 @theme inline {
@@ -25,6 +32,15 @@
   --color-hover: var(--accent-grey);
   --color-secondary-text: var(--secondary-text-clr);
   --color-accent-blue: var(--accent-light-blue);
+
+  --color-radial-1: var(--rad-clr-1);
+  --color-radial-2: var(--rad-clr-2);
+  --color-radial-3: var(--rad-clr-3);
+
+  --color-comment-stat: var(--comment-stat);
+
+  --color-main-text: var(--main-text-clr);
+  --color-faded-text: var(--faded-text);
 }
 
 @media (prefers-color-scheme: dark) {

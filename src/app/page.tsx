@@ -1,8 +1,29 @@
 import { Aside } from '@/components/Aside/Aside';
 import { Card } from '@/components/Card/Card';
+import { CommentSection } from '@/components/CommentSection/CommentSection';
+import { CommentStat } from '@/components/CommentStat/CommentStat';
 import { List } from '@/components/List/List';
 import { Logo } from '@/components/Logo/Logo';
 import { Tag } from '@/components/Tag/Tag';
+import { ListItem } from '@/types/list';
+
+const dummyData: ListItem[] = [
+  {
+    type: 'planned',
+    amount: 2,
+    label: 'Planned',
+  },
+  {
+    type: 'in-progress',
+    amount: 3,
+    label: 'In-Progress',
+  },
+  {
+    type: 'live',
+    amount: 1,
+    label: 'Live',
+  },
+];
 
 export default function Home() {
   return (
@@ -18,9 +39,14 @@ export default function Home() {
           <Tag tagContent="Feature" />
         </Card>
         <Card>
-          <List listItems={[]} title="" />
+          <List listItems={dummyData} title="Roadmap" />
         </Card>
       </Aside>
+      <CommentSection>
+        <Card cs="bg-comment-stat w-full p-4">
+          <CommentStat />
+        </Card>
+      </CommentSection>
     </>
   );
 }

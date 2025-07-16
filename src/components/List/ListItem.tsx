@@ -1,15 +1,8 @@
 import { cn } from '@/utils/cn';
 import React from 'react';
+import { type ListItem, type ListItemType } from '@/types/list';
 
-type ListItemType = 'in-progress' | 'live' | 'planned';
-
-export type ListItemProps = {
-  type: ListItemType;
-  label: string;
-  amount: number;
-};
-
-export function ListItem({ type, label, amount }: ListItemProps) {
+export function ListItem({ type, label, amount }: ListItem) {
   const typeColorLookup: Record<ListItemType, string> = {
     'in-progress': 'bg-primary',
     live: 'bg-accent-blue',

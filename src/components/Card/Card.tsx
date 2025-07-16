@@ -1,8 +1,18 @@
+import { cn } from '@/utils/cn';
 import { PropsWithChildren } from 'react';
 
-export function Card({ children }: PropsWithChildren) {
+type CardProps = {
+  cs?: string;
+} & PropsWithChildren;
+
+export function Card({ children, cs }: CardProps) {
   return (
-    <article className="w-fit min-w-[255px] max-w-[255px] p-6 rounded-lg bg-white flex flex-row gap-2 justify-start flex-wrap">
+    <article
+      className={cn(
+        'w-fit min-w-[255px] p-6 rounded-xl bg-white flex flex-row gap-2 justify-start flex-wrap',
+        cs
+      )}
+    >
       {children}
     </article>
   );
