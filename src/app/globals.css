@@ -8,12 +8,14 @@
   --faded-text: #f2f4fe;
 
   --primary-pink: #ad1fea;
+  --primary-hover: #c75af6;
   --secondary-blue: #4661e6;
   --accent-orange: #f49f85;
   --accent-grey: #cfd7ff;
   --accent-light-blue: #62bcfa;
 
   --border-clr: #979797;
+  --border-faded-clr: #97979738;
 
   --rad-clr-1: #e84d70;
   --rad-clr-2: #a337f6;
@@ -24,10 +26,12 @@
 
 @theme inline {
   --color-primary: var(--primary-pink);
+  --color-primary-hover: var(--primary-hover);
   --color-secondary: var(--secondary-blue);
   --color-accent: var(--accent-orange);
   --color-main-bg: var(--main-bg);
   --color-main-border: var(--border-clr);
+  --color-main-border-fade: var(--border-faded-clr);
   --color-secondary-bg: var(--secondary-bg);
   --color-hover: var(--accent-grey);
   --color-secondary-text: var(--secondary-text-clr);

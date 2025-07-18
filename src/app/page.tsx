@@ -1,10 +1,11 @@
 import { Aside } from '@/components/Aside/Aside';
 import { Card } from '@/components/Card/Card';
-import { CommentSection } from '@/components/CommentSection/CommentSection';
+import { FeedbackSection } from '@/components/FeedbackSection/FeedbackSection';
 import { CommentStat } from '@/components/CommentStat/CommentStat';
 import { List } from '@/components/List/List';
 import { Logo } from '@/components/Logo/Logo';
 import { Tag } from '@/components/Tag/Tag';
+import { Feedback } from '@/components/Feedback/Feedback';
 import { ListItem } from '@/types/list';
 
 const dummyData: ListItem[] = [
@@ -42,11 +43,14 @@ export default function Home() {
           <List listItems={dummyData} title="Roadmap" />
         </Card>
       </Aside>
-      <CommentSection>
+      <FeedbackSection>
         <Card cs="bg-comment-stat w-full p-4">
           <CommentStat />
         </Card>
-      </CommentSection>
+        <Card cs="w-full">
+          <Feedback />
+        </Card>
+      </FeedbackSection>
     </>
   );
 }

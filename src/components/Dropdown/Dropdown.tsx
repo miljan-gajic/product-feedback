@@ -59,13 +59,13 @@ export function Dropdown() {
       </button>
 
       {isOpen && (
-        <div className="absolute z-10 w-64 mt-2 bg-white rounded-xl shadow-lg">
+        <div className="absolute z-10 w-64 mt-6 bg-white rounded-xl shadow-lg">
           <ul className="py-2">
             {options.map((option) => (
               <li
                 key={option.value}
                 onClick={() => handleOptionClick(option)}
-                className={`flex items-center justify-between px-4 py-2 cursor-pointer hover:text-primary`}
+                className="flex items-center justify-between px-4 py-2 cursor-pointer hover:text-primary border-b border-main-border-fade last:border-b-0"
               >
                 {option.label}
                 {selectedOption.value === option.value && (
