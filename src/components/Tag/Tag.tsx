@@ -1,7 +1,8 @@
+import { ProductRequestStatuses } from '@/types/productRequest';
 import { cn } from '@/utils/cn';
 
 type TagProps = {
-  tagContent: string;
+  tagContent?: ProductRequestStatuses;
   active?: boolean;
 };
 

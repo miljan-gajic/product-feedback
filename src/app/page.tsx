@@ -10,7 +10,11 @@ import { ListItem } from '@/types/list';
 import { NoFeedback } from '@/components/NoFeedback/NoFeedback';
 
 import data from '../../public/assets/data/data.json';
-import { ApiResponse, ProductRequest } from '@/types/productRequest';
+import {
+  ApiResponse,
+  ProductRequest,
+  ProductRequestStatuses,
+} from '@/types/productRequest';
 import { api } from './api/api';
 import { mapStatusesFromProduct } from '@/utils/mapStatusesFromProduct';
 import { mapCategoriesFromProduct } from '@/utils/mapCategoriesFromProduct';
@@ -47,7 +51,7 @@ export default async function Home() {
         <Logo />
         <Card>
           {listOfCategories?.map((category, idx) => (
-            <Tag tagContent={category} key={idx} />
+            <Tag tagContent={category as ProductRequestStatuses} key={idx} />
           ))}
         </Card>
         <Card>
@@ -63,9 +67,18 @@ export default async function Home() {
             <NoFeedback />
           </Card>
         ) : (
-          <Card cs="w-full">
-            <Feedback />
-          </Card>
+          data?.productRequests.map(
+            ({ description, status, upvotes, title }) => (
+              <Card cs="w-full">
+                <Feedback
+                  description={description}
+                  status={status}
+                  title={title}
+                  upvotesCount={upvotes}
+                />
+              </Card>
+            )
+          )
         )}
       </FeedbackSection>
     </>

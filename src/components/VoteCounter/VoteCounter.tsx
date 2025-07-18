@@ -4,11 +4,11 @@ import { cn } from '@/utils/cn';
 import arrowUp from '../../../public/icons/icon-arrow-up.svg';
 
 type VoteCounterProps = {
-  count: number;
+  upvotesCount: number;
   active?: boolean;
 };
 
-export function VoteCounter({ count, active }: VoteCounterProps) {
+export function VoteCounter({ upvotesCount, active }: VoteCounterProps) {
   return (
     <button
       className={cn(
@@ -29,7 +29,7 @@ export function VoteCounter({ count, active }: VoteCounterProps) {
           active ? 'text-white' : 'text-secondary-text'
         )}
       >
-        {count}
+        {upvotesCount}
       </p>
     </button>
   );

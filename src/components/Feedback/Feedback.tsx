@@ -3,18 +3,27 @@ import { VoteCounter } from '../VoteCounter/VoteCounter';
 import { FeedbackContent } from './FeedbackContent/FeedbackContent';
 import { Comment } from '../Comment/Comment';
 import { cn } from '@/utils/cn';
+import { ProductRequestStatuses } from '@/types/productRequest';
 
-export function Feedback() {
+type FeedbackProps = {
+  title: string;
+  upvotesCount: number;
+  description: string;
+  status: ProductRequestStatuses;
+};
+
+export function Feedback({
+  title,
+  upvotesCount,
+  description,
+  status,
+}: FeedbackProps) {
   return (
     <section
       className={cn('w-full flex flex-row justify-between items-start gap-8')}
     >
-      <VoteCounter count={99} />
-      <FeedbackContent
-        title="Add tags for solutions"
-        body="Easier to search for solutions based on specific task."
-        tags={['Enhancement']}
-      />
+      <VoteCounter upvotesCount={upvotesCount} />
+      <FeedbackContent title={title} body={description} tag={status} />
       <Comment commentCount={4} />
     </section>
   );
