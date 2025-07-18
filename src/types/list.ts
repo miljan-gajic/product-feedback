@@ -1,7 +1,7 @@
-export type ListItemType = 'in-progress' | 'live' | 'planned';
+import { ProductRequestStatuses } from "./productRequest";
 
 export type ListItem = {
-  type: ListItemType;
+  type: ProductRequestStatuses;
   label: string;
   amount: number;
 };

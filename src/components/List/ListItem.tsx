@@ -1,12 +1,14 @@
 import { cn } from '@/utils/cn';
 import React from 'react';
-import { type ListItem, type ListItemType } from '@/types/list';
+import { type ListItem } from '@/types/list';
+import { ProductRequestStatuses } from '@/types/productRequest';
 
 export function ListItem({ type, label, amount }: ListItem) {
-  const typeColorLookup: Record<ListItemType, string> = {
+  const typeColorLookup: Record<ProductRequestStatuses, string> = {
     'in-progress': 'bg-primary',
     live: 'bg-accent-blue',
     planned: 'bg-accent',
+    suggestion: 'bg-secondary',
   };
   return (
     <li className="flex items-center justify-between">

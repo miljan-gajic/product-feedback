@@ -9,6 +9,12 @@ import { Feedback } from '@/components/Feedback/Feedback';
 import { ListItem } from '@/types/list';
 import { NoFeedback } from '@/components/NoFeedback/NoFeedback';
 
+import data from '../../public/assets/data/data.json';
+import { ApiResponse, ProductRequest } from '@/types/productRequest';
+import { api } from './api/api';
+import { mapStatusesFromProduct } from '@/utils/mapStatusesFromProduct';
+import { mapCategoriesFromProduct } from '@/utils/mapCategoriesFromProduct';
+
 const dummyData: ListItem[] = [
   {
     type: 'planned',
@@ -27,23 +33,25 @@ const dummyData: ListItem[] = [
   },
 ];
 
-const noFeedback = true;
+export default async function Home() {
+  const data = await api<ApiResponse>('/assets/data/data.json');
 
-export default function Home() {
+  const listItems = mapStatusesFromProduct(data.productRequests);
+  const listOfCategories = mapCategoriesFromProduct(data.productRequests);
+
+  const noFeedback = data.productRequests.length === 0;
+
   return (
     <>
       <Aside>
         <Logo />
         <Card>
-          <Tag tagContent="All" active />
-          <Tag tagContent="UI" />
-          <Tag tagContent="UX" />
-          <Tag tagContent="Enhancement" />
-          <Tag tagContent="Bug" />
-          <Tag tagContent="Feature" />
+          {listOfCategories?.map((category, idx) => (
+            <Tag tagContent={category} key={idx} />
+          ))}
         </Card>
         <Card>
-          <List listItems={dummyData} title="Roadmap" />
+          <List listItems={listItems} title="Roadmap" />
         </Card>
       </Aside>
       <FeedbackSection>
