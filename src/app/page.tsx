@@ -7,6 +7,7 @@ import { Logo } from '@/components/Logo/Logo';
 import { Tag } from '@/components/Tag/Tag';
 import { Feedback } from '@/components/Feedback/Feedback';
 import { ListItem } from '@/types/list';
+import { NoFeedback } from '@/components/NoFeedback/NoFeedback';
 
 const dummyData: ListItem[] = [
   {
@@ -25,6 +26,8 @@ const dummyData: ListItem[] = [
     label: 'Live',
   },
 ];
+
+const noFeedback = true;
 
 export default function Home() {
   return (
@@ -47,9 +50,15 @@ export default function Home() {
         <Card cs="bg-comment-stat w-full p-4">
           <CommentStat />
         </Card>
-        <Card cs="w-full">
-          <Feedback />
-        </Card>
+        {noFeedback ? (
+          <Card cs="w-full items-center justify-center">
+            <NoFeedback />
+          </Card>
+        ) : (
+          <Card cs="w-full">
+            <Feedback />
+          </Card>
+        )}
       </FeedbackSection>
     </>
   );
