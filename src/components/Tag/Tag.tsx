@@ -1,5 +1,6 @@
 import { ProductRequestStatuses } from '@/types/productRequest';
 import { cn } from '@/utils/cn';
+import { capitalize } from 'lodash';
 
 type TagProps = {
   tagContent?: ProductRequestStatuses;
@@ -20,7 +21,7 @@ export function Tag({ tagContent, active }: TagProps) {
           active ? 'text-white' : 'text-secondary'
         )}
       >
-        {tagContent}
+        {capitalize(tagContent)}
       </p>
     </button>
   );

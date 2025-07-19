@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${getJost.className} antialiased`}>
-        <main className="w-[1200px] h-[1000px] mx-auto min-h-screen mt-8 flex flex-row gap-6">
+        <main className="w-[1200px] mx-auto min-h-screen my-8 flex flex-row gap-6">
           {children}
         </main>
       </body>

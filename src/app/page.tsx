@@ -19,24 +19,6 @@ import { api } from './api/api';
 import { mapStatusesFromProduct } from '@/utils/mapStatusesFromProduct';
 import { mapCategoriesFromProduct } from '@/utils/mapCategoriesFromProduct';
 
-const dummyData: ListItem[] = [
-  {
-    type: 'planned',
-    amount: 2,
-    label: 'Planned',
-  },
-  {
-    type: 'in-progress',
-    amount: 3,
-    label: 'In-Progress',
-  },
-  {
-    type: 'live',
-    amount: 1,
-    label: 'Live',
-  },
-];
-
 export default async function Home() {
   const data = await api<ApiResponse>('/assets/data/data.json');
 
@@ -68,13 +50,14 @@ export default async function Home() {
           </Card>
         ) : (
           data?.productRequests.map(
-            ({ description, status, upvotes, title }) => (
-              <Card cs="w-full">
+            ({ id, description, status, upvotes, title, comments }) => (
+              <Card cs="w-full" key={id}>
                 <Feedback
                   description={description}
                   status={status}
                   title={title}
                   upvotesCount={upvotes}
+                  totalComments={comments?.length}
                 />
               </Card>
             )

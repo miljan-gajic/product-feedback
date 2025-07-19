@@ -10,6 +10,7 @@ type FeedbackProps = {
   upvotesCount: number;
   description: string;
   status: ProductRequestStatuses;
+  totalComments?: number;
 };
 
 export function Feedback({
@@ -17,6 +18,7 @@ export function Feedback({
   upvotesCount,
   description,
   status,
+  totalComments,
 }: FeedbackProps) {
   return (
     <section
@@ -24,7 +26,7 @@ export function Feedback({
     >
       <VoteCounter upvotesCount={upvotesCount} />
       <FeedbackContent title={title} body={description} tag={status} />
-      <Comment commentCount={4} />
+      {totalComments && <Comment commentCount={totalComments} />}
     </section>
   );
 }
