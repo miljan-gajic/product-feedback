@@ -3,8 +3,8 @@ import Image from 'next/image';
 import { cn } from '@/utils/cn';
 import Button from '@/components/Button/Button';
 
-import emptyIllustraction from '../../../public/icons/illustration-empty.svg';
-import plusIcon from '../../../public/icons/icon-plus.svg';
+import emptyIllustraction from '../../../public/assets/icons/illustration-empty.svg';
+import plusIcon from '../../../public/assets/icons/icon-plus.svg';
 
 export function NoFeedback() {
   return (

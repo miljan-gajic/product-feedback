@@ -5,9 +5,9 @@ import Image from 'next/image';
 
 import { cn } from '@/utils/cn';
 
-import arrowUp from '../../../public/icons/icon-arrow-up.svg';
-import arrowDown from '../../../public/icons/icon-arrow-down.svg';
-import checkMark from '../../../public/icons/icon-check.svg';
+import arrowUp from '../../../public/assets/icons/icon-arrow-up.svg';
+import arrowDown from '../../../public/assets/icons/icon-arrow-down.svg';
+import checkMark from '../../../public/assets/icons/icon-check.svg';
 
 const options = [
   { label: 'Most Upvotes', value: 'most-upvotes' },

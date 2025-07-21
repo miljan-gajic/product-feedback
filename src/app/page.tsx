@@ -6,15 +6,9 @@ import { List } from '@/components/List/List';
 import { Logo } from '@/components/Logo/Logo';
 import { Tag } from '@/components/Tag/Tag';
 import { Feedback } from '@/components/Feedback/Feedback';
-import { ListItem } from '@/types/list';
 import { NoFeedback } from '@/components/NoFeedback/NoFeedback';
 
-import data from '../../public/assets/data/data.json';
-import {
-  ApiResponse,
-  ProductRequest,
-  ProductRequestStatuses,
-} from '@/types/productRequest';
+import { ApiResponse, ProductRequestStatuses } from '@/types/productRequest';
 import { api } from './api/api';
 import { mapStatusesFromProduct } from '@/utils/mapStatusesFromProduct';
 import { mapCategoriesFromProduct } from '@/utils/mapCategoriesFromProduct';
@@ -25,10 +19,16 @@ export default async function Home() {
   const listItems = mapStatusesFromProduct(data.productRequests);
   const listOfCategories = mapCategoriesFromProduct(data.productRequests);
 
-  const noFeedback = data.productRequests.length === 0;
+  if (data.productRequests.length === 0) {
+    return (
+      <Card cs="w-full items-center justify-center">
+        <NoFeedback />
+      </Card>
+    );
+  }
 
   return (
-    <>
+    <section className="flex flex-row gap-6">
       <Aside>
         <Logo />
         <Card>
@@ -44,26 +44,21 @@ export default async function Home() {
         <Card cs="bg-comment-stat w-full p-4">
           <CommentStat />
         </Card>
-        {noFeedback ? (
-          <Card cs="w-full items-center justify-center">
-            <NoFeedback />
-          </Card>
-        ) : (
-          data?.productRequests.map(
-            ({ id, description, status, upvotes, title, comments }) => (
-              <Card cs="w-full" key={id}>
-                <Feedback
-                  description={description}
-                  status={status}
-                  title={title}
-                  upvotesCount={upvotes}
-                  totalComments={comments?.length}
-                />
-              </Card>
-            )
+        {data?.productRequests.map(
+          ({ id, description, status, upvotes, title, comments }) => (
+            <Card cs="w-full" key={id} interactive>
+              <Feedback
+                description={description}
+                status={status}
+                title={title}
+                upvotesCount={upvotes}
+                totalComments={comments?.length}
+                feedbackId={id}
+              />
+            </Card>
           )
         )}
       </FeedbackSection>
-    </>
+    </section>
   );
 }

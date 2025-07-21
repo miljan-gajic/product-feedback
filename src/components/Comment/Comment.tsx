@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import commentsIcon from '../../../public/icons/icon-comments.svg';
+import commentsIcon from '../../../public/assets/icons/icon-comments.svg';
 
 type CommentProps = {
   commentCount: number;

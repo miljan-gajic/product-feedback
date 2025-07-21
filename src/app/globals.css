@@ -9,6 +9,7 @@
 
   --primary-pink: #ad1fea;
   --primary-hover: #c75af6;
+  --secondary-hover: #7c91f9;
   --secondary-blue: #4661e6;
   --accent-orange: #f49f85;
   --accent-grey: #cfd7ff;
@@ -28,6 +29,7 @@
   --color-primary: var(--primary-pink);
   --color-primary-hover: var(--primary-hover);
   --color-secondary: var(--secondary-blue);
+  --color-secondary-hover: var(--secondary-hover);
   --color-accent: var(--accent-orange);
   --color-main-bg: var(--main-bg);
   --color-main-border: var(--border-clr);

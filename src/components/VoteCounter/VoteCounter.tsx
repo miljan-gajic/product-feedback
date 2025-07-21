@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import { cn } from '@/utils/cn';
-import arrowUp from '../../../public/icons/icon-arrow-up.svg';
+import arrowUp from '../../../public/assets/icons/icon-arrow-up.svg';
 
 type VoteCounterProps = {
   upvotesCount: number;

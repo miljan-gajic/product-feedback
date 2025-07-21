@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 
-import suggestionsIcon from '../../../public/icons/icon-suggestions.svg';
-import plusIcon from '../../../public/icons/icon-plus.svg';
+import suggestionsIcon from '../../../public/assets/icons/icon-suggestions.svg';
+import plusIcon from '../../../public/assets/icons/icon-plus.svg';
 import { Dropdown } from '@/components/Dropdown/Dropdown';
 import Button from '@/components/Button/Button';
 
