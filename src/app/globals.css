@@ -7,6 +7,8 @@
   --secondary-text-clr: #3a4374;
   --faded-text: #f2f4fe;
 
+  --divider-main-clr: #8c92b3;
+
   --primary-pink: #ad1fea;
   --primary-hover: #c75af6;
   --secondary-hover: #7c91f9;
@@ -47,6 +49,8 @@
 
   --color-main-text: var(--main-text-clr);
   --color-faded-text: var(--faded-text);
+
+  --color-divider: var(--divider-main-clr);
 }
 
 @media (prefers-color-scheme: dark) {

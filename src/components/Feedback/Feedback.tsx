@@ -3,7 +3,7 @@
 import React from 'react';
 import { VoteCounter } from '../VoteCounter/VoteCounter';
 import { FeedbackContent } from './FeedbackContent/FeedbackContent';
-import { Comment } from '../Comment/Comment';
+import { CommentCount } from '../Comment/CommentCount';
 import { cn } from '@/utils/cn';
 import { ProductRequestStatuses } from '@/types/productRequest';
 import { useRouter } from 'next/navigation';
@@ -44,7 +44,7 @@ export function Feedback({
     >
       <VoteCounter upvotesCount={upvotesCount} />
       <FeedbackContent title={title} body={description} tag={status} />
-      {totalComments && <Comment commentCount={totalComments} />}
+      {totalComments && <CommentCount commentCount={totalComments} />}
     </article>
   );
 }

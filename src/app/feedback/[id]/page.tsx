@@ -3,6 +3,7 @@ import { SecondaryNav } from '@/components/SecondaryNav/SecondaryNav';
 import { Card } from '@/components/Card/Card';
 import React from 'react';
 import { Feedback } from '@/components/Feedback/Feedback';
+import { Comment } from '@/components/Comment/Comment';
 
 export default async function FeedbackPage({
   params,
@@ -25,6 +26,11 @@ export default async function FeedbackPage({
           totalComments={comments?.length}
           feedbackId={+id}
         />
+      </Card>
+      <Card cs="w-full mt-4">
+        {comments?.map(({ id, content, user, replies }) => (
+          <Comment key={id} content={content} user={user} replies={replies} />
+        ))}
       </Card>
     </>
   );

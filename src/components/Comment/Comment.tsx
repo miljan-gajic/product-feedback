@@ -1,16 +1,19 @@
-import Image from 'next/image';
-
-import commentsIcon from '../../../public/assets/icons/icon-comments.svg';
+import { Reply } from '@/types/productRequest';
+import { User } from '@/types/user';
+import { cn } from '@/utils/cn';
+import React from 'react';
 
 type CommentProps = {
-  commentCount: number;
+  content: string;
+  user: User;
+  id?: number;
+  replies?: Reply[];
 };
 
-export function Comment({ commentCount }: CommentProps) {
+export function Comment({ content, user }: CommentProps) {
   return (
-    <div className="flex gap-3 self-center cursor-pointer">
-      <Image src={commentsIcon} alt="Comment icon" width={24} height={24} />
-      <span className="text-secondary-text font-bold">{commentCount}</span>
-    </div>
+    <article className={cn('border-b border-b-main-border w-full')}>
+      Comment
+    </article>
   );
 }
