@@ -10,6 +10,7 @@ const buttonVariants = cva(
           'bg-primary text-white hover:bg-primary-hover focus:ring-primary-hover',
         secondary:
           'bg-secondary text-gray-800 hover:bg-secondary-hover focus:ring--secondary text-white',
+        link: 'text-secondary hover:underline focus:ring-secondary',
       },
       size: {
         sm: 'px-4 py-2 text-sm',
@@ -24,21 +25,29 @@ const buttonVariants = cva(
   }
 );
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
+type ButtonProps<T extends React.ElementType> = {
+  as?: T;
+} & React.ButtonHTMLAttributes<HTMLButtonElement> &
   VariantProps<typeof buttonVariants> &
-  PropsWithChildren;
+  PropsWithChildren &
+  React.ComponentPropsWithoutRef<T>;
 
-const Button: React.FC<ButtonProps> = ({
+const Button = <T extends React.ElementType>({
   children,
   variant,
   size,
   className,
+  as,
   ...props
-}) => {
+}: ButtonProps<T>) => {
+  const Component = as || 'button';
   return (
-    <button className={buttonVariants({ variant, size, className })} {...props}>
+    <Component
+      className={buttonVariants({ variant, size, className })}
+      {...props}
+    >
       {children}
-    </button>
+    </Component>
   );
 };
 
