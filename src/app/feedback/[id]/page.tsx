@@ -2,7 +2,7 @@ import { getProductFeedbackById } from '@/app/api/productFeedback';
 import { SecondaryNav } from '@/components/SecondaryNav/SecondaryNav';
 import { Card } from '@/components/Card/Card';
 import React, { Fragment } from 'react';
-import { Feedback } from '@/components/Feedback/Feedback';
+import { Feedback } from '@/components/FeedbackSection/Feedback/Feedback';
 import { Comment } from '@/components/Comment/Comment';
 import { calculateTotalComments } from '@/utils/calculateTotalComments';
 

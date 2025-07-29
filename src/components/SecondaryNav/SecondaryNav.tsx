@@ -7,7 +7,11 @@ import arrowLeftIcon from '../../../public/assets/icons/icon-arrow-left.svg';
 import Button from '@/components/Button/Button';
 import { useRouter } from 'next/navigation';
 
-export function SecondaryNav() {
+type SecondaryNavProps = {
+  showEditButton?: boolean;
+};
+
+export function SecondaryNav({ showEditButton = true }: SecondaryNavProps) {
   const router = useRouter();
 
   const handleGoBack = () => {
@@ -34,9 +38,11 @@ export function SecondaryNav() {
         />
         <p className="font-semibold">Go Back</p>
       </div>
-      <Button variant="secondary" size="md">
-        Edit Feedback
-      </Button>
+      {showEditButton && (
+        <Button variant="secondary" size="md">
+          Edit Feedback
+        </Button>
+      )}
     </nav>
   );
 }

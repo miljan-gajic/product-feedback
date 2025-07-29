@@ -1,4 +1,4 @@
-import { ProductRequest } from '@/types/productRequest'
+import { ProductRequest, ProductRequestStatuses } from '@/types/productRequest'
 import { capitalize } from 'lodash';
 
 export function mapCategoriesFromProduct(productReq: ProductRequest[]) {
@@ -9,5 +9,5 @@ export function mapCategoriesFromProduct(productReq: ProductRequest[]) {
     return acc;
   }, []);
 
-  return ["All", ...uniqueCategories];
+  return ["All", ...uniqueCategories] as ProductRequestStatuses[];
 }

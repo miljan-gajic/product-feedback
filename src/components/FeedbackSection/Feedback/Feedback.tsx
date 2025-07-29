@@ -1,12 +1,13 @@
 'use client';
 
 import React from 'react';
-import { VoteCounter } from '../VoteCounter/VoteCounter';
 import { FeedbackContent } from './FeedbackContent/FeedbackContent';
-import { CommentCount } from '../Comment/CommentCount';
 import { cn } from '@/utils/cn';
 import { ProductRequestStatuses } from '@/types/productRequest';
 import { useRouter } from 'next/navigation';
+import { VoteCounter } from '@/components/VoteCounter/VoteCounter';
+import { CommentCount } from '@/components/Comment/CommentCount';
+import { calculateTotalComments } from '@/utils/calculateTotalComments';
 
 type FeedbackProps = {
   title: string;
@@ -28,6 +29,7 @@ export function Feedback({
   const router = useRouter();
 
   const handleClick = () => {
+    if (!totalComments) return;
     router.push(`/feedback/${feedbackId}`);
   };
   return (
