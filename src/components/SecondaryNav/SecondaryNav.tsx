@@ -9,13 +9,21 @@ import { useRouter } from 'next/navigation';
 
 type SecondaryNavProps = {
   showEditButton?: boolean;
+  requestId?: string;
 };
 
-export function SecondaryNav({ showEditButton = true }: SecondaryNavProps) {
+export function SecondaryNav({
+  showEditButton = true,
+  requestId,
+}: SecondaryNavProps) {
   const router = useRouter();
 
   const handleGoBack = () => {
     router.back();
+  };
+
+  const handleEditRoute = () => {
+    router.push(`edit/${requestId}`);
   };
 
   return (
@@ -39,7 +47,7 @@ export function SecondaryNav({ showEditButton = true }: SecondaryNavProps) {
         <p className="font-semibold">Go Back</p>
       </div>
       {showEditButton && (
-        <Button variant="secondary" size="md">
+        <Button variant="secondary" size="md" onClick={handleEditRoute}>
           Edit Feedback
         </Button>
       )}

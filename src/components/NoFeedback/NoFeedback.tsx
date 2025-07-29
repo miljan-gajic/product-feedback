@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 
 import { cn } from '@/utils/cn';
@@ -5,8 +7,15 @@ import Button from '@/components/Button/Button';
 
 import emptyIllustraction from '../../../public/assets/icons/illustration-empty.svg';
 import plusIcon from '../../../public/assets/icons/icon-plus.svg';
+import { useRouter } from 'next/navigation';
 
 export function NoFeedback() {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push('/feedback/create');
+  };
+
   return (
     <section
       className={cn('flex flex-col items-center justify-center gap-12 py-18')}
@@ -26,9 +35,9 @@ export function NoFeedback() {
           hearing about new ideas to improve our app.
         </p>
       </div>
-      <Button variant="primary" size="sm">
+      <Button variant="primary" size="sm" onClick={handleClick}>
         <Image src={plusIcon} width={8} height={8} alt="Plus Icon" />
-        <p>Add Feedback</p>
+        Add Feedback
       </Button>
     </section>
   );

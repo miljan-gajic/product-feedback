@@ -9,8 +9,10 @@ const buttonVariants = cva(
         primary:
           'bg-primary text-white hover:bg-primary-hover focus:ring-primary-hover',
         secondary:
-          'bg-secondary text-gray-800 hover:bg-secondary-hover focus:ring--secondary text-white',
+          'bg-secondary hover:bg-secondary-hover focus:ring--secondary text-white',
         link: 'text-secondary hover:underline focus:ring-secondary',
+        error:
+          'bg-error-main text-white hover:bg-error-hover focus:ring-error-hover',
       },
       size: {
         sm: 'px-4 py-2 text-sm',

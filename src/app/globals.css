@@ -3,6 +3,7 @@
 :root {
   --main-bg: #f7f8fd;
   --secondary-bg: #f2f4ff;
+  --error-bg: #d73737;
   --main-text-clr: #647196;
   --secondary-text-clr: #3a4374;
   --faded-text: #f2f4fe;
@@ -16,6 +17,8 @@
   --accent-orange: #f49f85;
   --accent-grey: #cfd7ff;
   --accent-light-blue: #62bcfa;
+  --error-hover: #e98888;
+  --secondary-text-hover: #656ea3;
 
   --border-clr: #979797;
   --border-faded-clr: #97979738;
@@ -39,7 +42,10 @@
   --color-secondary-bg: var(--secondary-bg);
   --color-hover: var(--accent-grey);
   --color-secondary-text: var(--secondary-text-clr);
+  --color-secondary-text-hover: var(--secondary-text-hover);
   --color-accent-blue: var(--accent-light-blue);
+  --color-error-main: var(--error-bg);
+  --color-error-hover: var(--error-hover);
 
   --color-radial-1: var(--rad-clr-1);
   --color-radial-2: var(--rad-clr-2);

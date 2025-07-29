@@ -18,7 +18,7 @@ export default async function FeedbackPage({
   const totalComments = calculateTotalComments(comments);
   return (
     <>
-      <SecondaryNav />
+      <SecondaryNav requestId={id} />
       <Card cs="w-full" key={id}>
         <Feedback
           description={description || ''}
