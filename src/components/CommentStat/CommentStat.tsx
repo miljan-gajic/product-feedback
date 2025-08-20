@@ -9,7 +9,11 @@ import { Dropdown } from '@/components/Dropdown/Dropdown';
 import Button from '@/components/Button/Button';
 import { useRouter } from 'next/navigation';
 
-export function CommentStat() {
+type CommentStatsProps = {
+  numberOfSuggestions?: number;
+};
+
+export function CommentStat({ numberOfSuggestions }: CommentStatsProps) {
   const router = useRouter();
 
   const handleClick = () => {
@@ -25,7 +29,9 @@ export function CommentStat() {
           height={24}
           alt="Light Bulb icon"
         />
-        <p className="text-white font-bold text-xl">6 Suggestions</p>
+        <p className="text-white font-bold text-xl">
+          {numberOfSuggestions} Suggestions
+        </p>
         <Dropdown />
       </div>
       <Button variant="primary" size="md" onClick={handleClick}>

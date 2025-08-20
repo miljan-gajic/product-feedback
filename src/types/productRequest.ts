@@ -1,6 +1,6 @@
 import { User } from "./user";
 
-export type ProductRequestStatuses = "suggestion" | "planned" | "in-progress" | "live"
+export type ProductRequestStatuses = "planned" | "in-progress" | "live"
 export type ProductRequestCategory = "feature" | "enhancement" | "bug" | "UI" | "UX"
 
 export type Reply = {

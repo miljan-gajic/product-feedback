@@ -5,6 +5,8 @@ import React, { Fragment } from 'react';
 import { Feedback } from '@/components/FeedbackSection/Feedback/Feedback';
 import { Comment } from '@/components/Comment/Comment';
 import { calculateTotalComments } from '@/utils/calculateTotalComments';
+import { ProductRequestStatuses } from '@/types/productRequest';
+import { CommentsList } from '@/components/Comment/CommentsList';
 
 export default async function FeedbackPage({
   params,
@@ -22,7 +24,7 @@ export default async function FeedbackPage({
       <Card cs="w-full" key={id}>
         <Feedback
           description={description || ''}
-          status={status || 'suggestion'}
+          status={status as ProductRequestStatuses}
           title={title || ''}
           upvotesCount={upvotes ?? 0}
           totalComments={totalComments}
@@ -34,17 +36,7 @@ export default async function FeedbackPage({
           <span className="pr-2">{totalComments}</span>
           {totalComments && totalComments === 1 ? 'Comment' : 'Comments'}
         </h1>
-        {comments?.map(({ id, content, user, replies }) => (
-          <Fragment key={id}>
-            <Comment
-              content={content}
-              user={user}
-              replies={replies}
-              totalComments={totalComments}
-            />
-            <div className="w-full border-t border-main-border-fade mx-4 my-6 last:border-0"></div>
-          </Fragment>
-        ))}
+        <CommentsList comments={comments} totalComments={totalComments} />
       </Card>
     </>
   );

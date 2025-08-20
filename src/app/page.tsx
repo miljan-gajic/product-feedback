@@ -18,6 +18,10 @@ export default async function Home() {
   const listItems = mapStatusesFromProduct(data.productRequests);
   const listOfCategories = mapCategoriesFromProduct(data.productRequests);
 
+  const numberOfSuggestions = data.productRequests.filter(
+    (p) => p.status === ('suggestion' as unknown)
+  )?.length;
+
   return (
     <section className="flex flex-row gap-6">
       <Aside>
@@ -27,7 +31,7 @@ export default async function Home() {
       </Aside>
       <FeedbackSection>
         <Card cs="bg-comment-stat w-full p-4">
-          <CommentStat />
+          <CommentStat numberOfSuggestions={numberOfSuggestions} />
         </Card>
         <FeedbackList productRequests={data?.productRequests} />
       </FeedbackSection>
